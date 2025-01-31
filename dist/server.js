@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
-// Simple Ping-Pong endpoint
+// Simple Ping-Pong endpoint returning JSON
 app.get("/ping", (req, res) => {
-    res.send("pong");
+    res.json({ message: "pong" }); // Changed from res.send('pong') to res.json({ message: 'pong' })
 });
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
